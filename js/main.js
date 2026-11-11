@@ -15,6 +15,59 @@ document.getElementById('year').textContent = new Date().getFullYear();
   });
 })();
 
+/* Projects track layout — runs regardless of whether GSAP loaded, so a
+   blocked/slow CDN never leaves the horizontal track un-contained (that
+   previously caused page-wide horizontal overflow on mobile). The GSAP
+   pin/scrub animation is layered on top of this when available. */
+const setupWorkTrack = () => {
+  const wrap = document.getElementById('workPinWrap');
+  const track = document.getElementById('workTrack');
+  if (!wrap || !track) return;
+
+  if (window.gsap && window.ScrollTrigger) {
+    ScrollTrigger.getAll().forEach((t) => { if (t.vars.id === 'workPin') t.kill(); });
+  }
+
+  const isMobile = window.innerWidth < 900;
+
+  if (isMobile || !window.gsap || !window.ScrollTrigger) {
+    // Narrow viewport, or no GSAP: a plain horizontally scrollable track.
+    if (window.gsap) {
+      window.gsap.set(track, { x: 0 });
+    } else {
+      track.style.transform = 'none';
+    }
+    track.style.overflowX = 'auto';
+    track.style.scrollSnapType = 'x proximity';
+    return;
+  }
+
+  track.style.overflowX = 'visible';
+  const getScrollAmount = () => track.scrollWidth - window.innerWidth + 64;
+
+  gsap.to(track, {
+    x: () => -getScrollAmount(),
+    ease: 'none',
+    scrollTrigger: {
+      id: 'workPin',
+      trigger: wrap,
+      start: 'top top',
+      end: () => `+=${getScrollAmount()}`,
+      scrub: true,
+      pin: true,
+      invalidateOnRefresh: true,
+    },
+  });
+};
+setupWorkTrack();
+window.addEventListener('resize', () => {
+  clearTimeout(window.__wpTimer);
+  window.__wpTimer = setTimeout(() => {
+    setupWorkTrack();
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  }, 200);
+});
+
 /* GSAP-driven animations, with a safe no-op fallback if the CDN fails to load */
 (function animate() {
   if (typeof gsap === 'undefined') {
@@ -63,44 +116,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
     });
   });
 
-  // Projects — horizontal scroll pinned section on wide viewports,
-  // graceful vertical fallback on narrow/touch screens.
-  const setupWorkPin = () => {
-    const wrap = document.getElementById('workPinWrap');
-    const track = document.getElementById('workTrack');
-    if (!wrap || !track) return;
-
-    ScrollTrigger.getAll().forEach((t) => { if (t.vars.id === 'workPin') t.kill(); });
-
-    if (window.innerWidth < 900) {
-      gsap.set(track, { x: 0 });
-      track.style.overflowX = 'auto';
-      track.style.scrollSnapType = 'x proximity';
-      return;
-    }
-
-    track.style.overflowX = 'visible';
-    const getScrollAmount = () => track.scrollWidth - window.innerWidth + 64;
-
-    gsap.to(track, {
-      x: () => -getScrollAmount(),
-      ease: 'none',
-      scrollTrigger: {
-        id: 'workPin',
-        trigger: wrap,
-        start: 'top top',
-        end: () => `+=${getScrollAmount()}`,
-        scrub: true,
-        pin: true,
-        invalidateOnRefresh: true,
-      },
-    });
-  };
-  setupWorkPin();
-  window.addEventListener('resize', () => {
-    clearTimeout(window.__wpTimer);
-    window.__wpTimer = setTimeout(() => { setupWorkPin(); ScrollTrigger.refresh(); }, 200);
-  });
+  // Re-run the track layout now that GSAP is confirmed available, so the
+  // desktop pin/scrub effect replaces the plain-scroll fallback above.
+  setupWorkTrack();
 })();
 
 /* Smooth-scroll for in-page nav links */
