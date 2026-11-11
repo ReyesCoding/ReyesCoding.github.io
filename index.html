@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bryan Reyes — Full-Stack Software Engineer</title>
+<meta name="description" content="Bryan Reyes, Full-Stack Software Engineer. Building role-based web platforms with React, Node.js, PostgreSQL and Docker." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<nav class="nav">
+  <a href="#top" class="nav__brand">BR<span class="nav__brand-dot">.</span></a>
+  <div class="nav__links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#stack">Stack</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="mailto:reyes.codes@gmail.com" class="nav__cta">Say hi</a>
+</nav>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="hero__glow"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal-line"><span>Dominican Republic · Available for opportunities</span></p>
+      <h1 class="hero__title">
+        <span class="line"><span class="word">Bryan</span></span>
+        <span class="line"><span class="word">Reyes</span><span class="hero__dot">.</span></span>
+      </h1>
+      <p class="hero__role reveal-line"><span>Full-Stack Software Engineer</span></p>
+      <p class="hero__tagline reveal-line"><span>I design and ship role-based web platforms — from the data model to the deployed container. Currently building <strong>Aula</strong>, a multi-tenant academic management system.</span></p>
+
+      <div class="hero__actions reveal-line">
+        <span>
+          <a href="#work" class="btn btn--primary">View projects</a>
+          <a href="https://github.com/ReyesCoding" target="_blank" rel="noopener" class="btn btn--ghost">GitHub ↗</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"><div class="hero__scroll-dot"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <section class="marquee" id="stack">
+    <div class="marquee__row marquee__row--left">
+      <div class="marquee__track">
+        <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span><span>Tailwind CSS</span><span>REST APIs</span>
+      </div>
+      <div class="marquee__track">
+        <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span><span>Tailwind CSS</span><span>REST APIs</span>
+      </div>
+    </div>
+    <div class="marquee__row marquee__row--right">
+      <div class="marquee__track">
+        <span>SQL Server</span><span>MySQL</span><span>JWT Auth</span><span>Git</span><span>NGINX</span><span>Postman</span><span>CI/CD</span><span>Linux</span><span>System Design</span><span>Data Modeling</span>
+      </div>
+      <div class="marquee__track">
+        <span>SQL Server</span><span>MySQL</span><span>JWT Auth</span><span>Git</span><span>NGINX</span><span>Postman</span><span>CI/CD</span><span>Linux</span><span>System Design</span><span>Data Modeling</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <span class="section-tag reveal-up">01 · About</span>
+      <p class="about__text">
+        <span class="about__line reveal-up">I'm a Computer Systems Engineer</span>
+        <span class="about__line reveal-up">(UTESA, 2026) who builds</span>
+        <span class="about__line reveal-up"><em>complete</em> web systems —</span>
+        <span class="about__line reveal-up">data model, API, auth, UI,</span>
+        <span class="about__line reveal-up">and the pipeline that ships it.</span>
+      </p>
+      <div class="about__pills reveal-up">
+        <span class="pill">React · Node.js · PostgreSQL</span>
+        <span class="pill">Multi-tenant architecture</span>
+        <span class="pill">EN / ES — bilingual</span>
+        <span class="pill">5+ yrs in technical operations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="work" id="work">
+    <div class="work__header">
+      <span class="section-tag reveal-up">02 · Selected Work</span>
+      <h2 class="work__title reveal-up">Projects, not just<br>a job history.</h2>
+    </div>
+
+    <div class="work__pin-wrap" id="workPinWrap">
+      <div class="work__track" id="workTrack">
+
+        <article class="project project--featured">
+          <div class="project__index">01</div>
+          <div class="project__body">
+            <p class="project__eyebrow">Featured · Full-stack platform</p>
+            <h3 class="project__title">Aula</h3>
+            <p class="project__desc">
+              A multi-tenant academic management platform for schools — assignments, grading,
+              attendance and reporting across role-based dashboards for admins, teachers,
+              students and parents in multiple institutions.
+            </p>
+            <ul class="project__points">
+              <li>Designed the full relational data model and multi-tenant isolation</li>
+              <li>JWT authentication with per-role authorization middleware</li>
+              <li>Automated PDF / CSV reporting for academic progress</li>
+              <li>Dockerized deployment with CI on every pull request</li>
+            </ul>
+            <div class="project__tags">
+              <span>React</span><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span><span>JWT</span>
+            </div>
+            <div class="project__links">
+              <a href="https://github.com/ReyesCoding/aula-sapm" target="_blank" rel="noopener" class="btn btn--primary">View code ↗</a>
+              <!-- Live demo link: wire up once the VPS + DuckDNS HTTPS setup is live -->
+              <span class="project__soon">Live demo — coming soon</span>
+            </div>
+          </div>
+          <div class="project__frame" aria-hidden="true">
+            <div class="project__frame-dot r"></div>
+            <div class="project__frame-dot y"></div>
+            <div class="project__frame-dot g"></div>
+            <div class="project__frame-lines">
+              <span></span><span></span><span></span><span style="width:40%"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--secondary">
+          <div class="project__index">02</div>
+          <div class="project__body">
+            <p class="project__eyebrow">PWA · Academic planning tool</p>
+            <h3 class="project__title">Pensum Planner</h3>
+            <p class="project__desc">
+              An offline-first progressive web app for planning a degree's course schedule against
+              its full prerequisite tree — entirely client-side, with conflict detection across
+              sections and a local admin mode for managing the dataset.
+            </p>
+            <ul class="project__points">
+              <li>Prerequisite / corequisite validation with cycle detection</li>
+              <li>Schedule conflict detection across sections</li>
+              <li>Fully offline via service worker + manifest</li>
+            </ul>
+            <div class="project__tags">
+              <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span><span>PWA</span>
+            </div>
+            <div class="project__links">
+              <a href="https://reyescoding.github.io/medicina-pwa-final/" target="_blank" rel="noopener" class="btn btn--primary">Live demo ↗</a>
+              <a href="https://github.com/ReyesCoding/medicina-pwa-final" target="_blank" rel="noopener" class="btn btn--ghost">Code ↗</a>
+            </div>
+          </div>
+          <div class="project__frame" aria-hidden="true">
+            <div class="project__frame-dot r"></div>
+            <div class="project__frame-dot y"></div>
+            <div class="project__frame-dot g"></div>
+            <div class="project__frame-lines">
+              <span></span><span style="width:60%"></span><span style="width:80%"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--secondary">
+          <div class="project__index">03</div>
+          <div class="project__body">
+            <p class="project__eyebrow">Backend · Authentication &amp; authorization</p>
+            <h3 class="project__title">Role-Based Auth System</h3>
+            <p class="project__desc">
+              A standalone authentication service built to go deep on backend security
+              fundamentals — JWT sessions, role-gated routes, and password management from
+              the ground up.
+            </p>
+            <ul class="project__points">
+              <li>JWT authentication with session / token-expiry handling</li>
+              <li>Role-gated routes and an admin-only panel</li>
+              <li>Password hashing with bcrypt</li>
+            </ul>
+            <div class="project__tags">
+              <span>Node.js</span><span>Express</span><span>MySQL</span><span>JWT</span><span>React</span>
+            </div>
+            <div class="project__links">
+              <a href="https://youtu.be/7ceiU_yt4Ww" target="_blank" rel="noopener" class="btn btn--primary">Watch demo ↗</a>
+              <a href="https://github.com/ReyesCoding/sistema-autenticacion" target="_blank" rel="noopener" class="btn btn--ghost">Code ↗</a>
+            </div>
+          </div>
+          <div class="project__frame" aria-hidden="true">
+            <div class="project__frame-dot r"></div>
+            <div class="project__frame-dot y"></div>
+            <div class="project__frame-dot g"></div>
+            <div class="project__frame-lines">
+              <span></span><span style="width:70%"></span><span style="width:50%"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--ghost">
+          <div class="project__index">04</div>
+          <div class="project__body">
+            <p class="project__eyebrow">Shipping soon</p>
+            <h3 class="project__title">More, on the way</h3>
+            <p class="project__desc">
+              This space is reserved for what's next. New projects get added here as they ship —
+              check the GitHub profile in the meantime for work in progress.
+            </p>
+            <div class="project__links">
+              <a href="https://github.com/ReyesCoding" target="_blank" rel="noopener" class="btn btn--ghost">See GitHub ↗</a>
+            </div>
+          </div>
+          <div class="project__frame project__frame--ghost" aria-hidden="true">+</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE (de-emphasized) ============ -->
+  <section class="experience">
+    <div class="experience__inner">
+      <span class="section-tag reveal-up">03 · Experience</span>
+      <div class="experience__row reveal-up">
+        <div class="experience__when">2026 — Present</div>
+        <div class="experience__what">
+          <strong>Assistant Programmer</strong> · SML Dominicana<br>
+          <span>Production support, SQL Server data validation, Groovy scripting for internal tooling.</span>
+        </div>
+      </div>
+      <div class="experience__row reveal-up">
+        <div class="experience__when">2019 — 2025</div>
+        <div class="experience__what">
+          <strong>Technical operations &amp; client support</strong> · International teams<br>
+          <span>5+ years supporting global clients in data-heavy, process-driven environments — the discipline that now shows up in how I document, test and ship software.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="education">
+    <div class="education__inner">
+      <span class="section-tag reveal-up">04 · Education</span>
+      <div class="education__grid reveal-up">
+        <div class="edu-card">
+          <h4>Computer Systems Engineering</h4>
+          <p>Universidad Tecnológica de Santiago (UTESA) · 2026</p>
+        </div>
+        <div class="edu-card">
+          <h4>CompTIA Network+</h4>
+          <p>ITLA · 2019</p>
+        </div>
+        <div class="edu-card">
+          <h4>Microsoft Office Specialist</h4>
+          <p>Certified · 2016</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <footer class="contact" id="contact">
+    <div class="contact__inner">
+      <span class="section-tag reveal-up">05 · Contact</span>
+      <h2 class="contact__title reveal-up">Let's build<br>something.</h2>
+      <a href="mailto:reyes.codes@gmail.com" class="contact__email reveal-up">reyes.codes@gmail.com</a>
+      <div class="contact__links reveal-up">
+        <a href="https://github.com/ReyesCoding" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/bryan-reyes-96bb0738a/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="contact__footer">© <span id="year"></span> Bryan Reyes. Built from scratch, deployed on GitHub Pages.</p>
+    </div>
+  </footer>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
