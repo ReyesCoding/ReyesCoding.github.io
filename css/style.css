@@ -125,7 +125,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 700;
   margin: 0 0 24px;
 }
-.hero__title .line { display: block; overflow: hidden; }
+.hero__title .line { display: block; overflow: hidden; padding-bottom: 0.18em; margin-bottom: -0.18em; }
 .hero__title .word { display: inline-block; }
 .hero__dot { color: var(--accent); }
 
